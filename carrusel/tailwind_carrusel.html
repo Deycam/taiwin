@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <div class="flex justify-center items-center min-h-screen">
+        <div id="indicators-carousel" class="relative w-full max-w-4xl" data-carousel="static">
+            <div class="relative h-64 md:h-96 overflow-hidden rounded-lg">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <img src="ima/tail.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="ima/tail1.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="ima/tail2.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+            </div>
+
+
+            <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
+
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const prevButton = document.querySelector('[data-carousel-prev]');
+        const nextButton = document.querySelector('[data-carousel-next]');
+        const slides = document.querySelectorAll('[data-carousel-item]');
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.classList.add('hidden');
+                if (index === currentSlide) {
+                    slide.classList.remove('hidden');
+                }
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+
+        updateCarousel();  // Inicializa el carrusel
+    </script>
+</body>
+</html>
