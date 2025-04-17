@@ -1,0 +1,34 @@
+<!--  Menú responsive (hamburguesa) con enlaces a los anteriores  -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5 - Menú Responsive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <nav class="bg-blue-500 p-4 text-white">
+    <div class="flex justify-between items-center">
+      <span class="font-bold text-xl">Ejercicios</span>
+      <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="menu" class="hidden md:flex flex-col md:flex-row mt-2 md:mt-0 space-y-2 md:space-y-0 md:space-x-4">
+      <a href="Ej_1.html" class="hover:underline">Ejercicio 1</a>
+      <a href="Ej_2.html" class="hover:underline">Ejercicio 2</a>
+      <a href="Ej_3.html" class="hover:underline">Ejercicio 3</a>
+      <a href="Ej_4.html" class="hover:underline">Ejercicio 4</a>
+    </div>
+  </nav>
+
+  <div class="p-6">
+    <p>Menú con enlaces a los ejercicios 1, 2, 3, y 4.</p>
+  </div>
+
+</body>
+</html>

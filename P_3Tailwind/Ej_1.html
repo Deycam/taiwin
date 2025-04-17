@@ -1,0 +1,35 @@
+<!--  Botón con hover   -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Botón Hover</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <nav class="bg-blue-500 p-4 text-white">
+    <div class="flex justify-between items-center">
+      <span class="font-bold text-xl">Ejercicios</span>
+      <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="menu" class="hidden md:flex flex-col md:flex-row mt-2 md:mt-0 space-y-2 md:space-y-0 md:space-x-4">
+      <a href="Ej_1.html" class="hover:underline">Ejercicio 1</a>
+      <a href="Ej_2.html" class="hover:underline">Ejercicio 2</a>
+      <a href="Ej_3.html" class="hover:underline">Ejercicio 3</a>
+      <a href="Ej_4.html" class="hover:underline">Ejercicio 4</a>
+    </div>
+  </nav>
+  <main class="flex justify-center items-center h-[calc(100vh-72px)]"> <!-- Ajuste altura para no tapar con el nav -->
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Hover me
+    </button>
+  </main>
+
+</body>
+</html>
+

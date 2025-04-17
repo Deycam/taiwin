@@ -1,0 +1,44 @@
+<!--  Formulario estilizado   -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4 - Formulario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <nav class="bg-blue-500 p-4 text-white">
+    <div class="flex justify-between items-center">
+      <span class="font-bold text-xl">Ejercicios</span>
+      <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="menu" class="hidden md:flex flex-col md:flex-row mt-2 md:mt-0 space-y-2 md:space-y-0 md:space-x-4">
+      <a href="Ej_1.html" class="hover:underline">Ejercicio 1</a>
+      <a href="Ej_2.html" class="hover:underline">Ejercicio 2</a>
+      <a href="Ej_3.html" class="hover:underline">Ejercicio 3</a>
+      <a href="Ej_4.html" class="hover:underline">Ejercicio 4</a>
+    </div>
+  </nav>
+  <main class="flex justify-center items-center h-[calc(100vh-72px)] p-4">
+    <form class="max-w-md w-full bg-white p-6 rounded shadow space-y-4">
+      <div>
+        <label class="block mb-1 text-gray-700">Nombre</label>
+        <input type="text" class="w-full border border-gray-300 p-2 rounded">
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700">Correo</label>
+        <input type="email" class="w-full border border-gray-300 p-2 rounded">
+      </div>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+        Enviar
+      </button>
+    </form>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!--  Tarjeta de usuario   -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2 - Tarjeta Usuario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <nav class="bg-blue-500 p-4 text-white">
+    <div class="flex justify-between items-center">
+      <span class="font-bold text-xl">Ejercicios</span>
+      <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="menu" class="hidden md:flex flex-col md:flex-row mt-2 md:mt-0 space-y-2 md:space-y-0 md:space-x-4">
+      <a href="Ej_1.html" class="hover:underline">Ejercicio 1</a>
+      <a href="Ej_2.html" class="hover:underline">Ejercicio 2</a>
+      <a href="Ej_3.html" class="hover:underline">Ejercicio 3</a>
+      <a href="Ej_4.html" class="hover:underline">Ejercicio 4</a>
+    </div>
+  </nav>
+  <main class="flex justify-center items-center h-[calc(100vh-72px)] px-4">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
+      <img class="w-32 h-32 rounded-full mx-auto" src="merida.jpg" alt="User Image">
+      <div class="text-center mt-4">
+        <h2 class="text-xl font-bold">DEYSI CAMATA</h2>
+        <p class="text-gray-600">"Soy una joven de 22 años, creativa, soñadora y con muchas ganas de seguir
+             aprendiendo y creciendo. Me encanta descubrir cosas nuevas, compartir buenas energías y disfrutar cada momento."</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
+
